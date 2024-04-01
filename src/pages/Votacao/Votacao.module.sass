@@ -1,0 +1,89 @@
+@import '../assets/styles/_variables.sass'
+
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100dvw
+  height: 100dvh
+
+  &__modal
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 2rem
+    background-color: rgba(88, 87, 87, 0.06)
+    width: 70%
+    height: 12rem
+    border-radius: 8px
+
+    h1
+      font-family: $title-font
+
+    input
+      width: 80%
+      height: 2.5rem
+      text-indent: 1rem
+
+    button
+      width: 8rem
+      height: 2rem
+
+  &_diretores
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 2rem
+
+    &_title
+      font-family: $title-font
+      margin-top: 1rem
+
+    &_div
+      display: none
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      width: 90%
+      height: 15rem
+      background-color: rgba(206, 206, 206, 0.25)
+      border-radius: 8px
+      gap: 2rem
+      font-size: 1.5rem
+
+      &_span
+        font-family: $title-font
+
+      &_buttons
+        display: flex
+        flex-direction: column
+        gap: 0.5rem
+        width: 100%
+        align-items: center
+
+        button
+          width: 90%
+          height: 5rem
+          gap: 0.1rem
+          display: flex
+          align-items: center
+          justify-content: center
+          border-radius: 8px
+          font-family: $title-font
+          font-size: 1.5rem
+          border: solid 1px #000
+          color: white
+          flex-direction: column
+
+          img
+            width: 2rem
+
+        &_aprovar
+          background-color: #00A1FC
+
+        &_desaprovar
+          background-color: #c8c810
