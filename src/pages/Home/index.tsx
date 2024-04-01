@@ -1,41 +1,21 @@
 import styles from './home.module.sass'
 import Box from "./Box";
+import {useEffect, useState} from "react";
+import http from "../../environment/environment";
 
 export default function Home(){
-    const manager = [
-        {
-            'name': 'Manfrin',
-            'support': 'Allan'
-        },
-        {
-            'name': 'Manfrin',
-            'support': 'Gabi'
-        },{
-            'name': 'Manfrin',
-            'support': 'Felix'
-        },{
-            'name': 'Manfrin',
-            'support': 'Marco'
-        },{
-            'name': 'Allan',
-            'support': 'Gabi'
-        },{
-            'name': 'Allan',
-            'support': 'Felix'
-        },{
-            'name': 'Allan',
-            'support': 'Marco'
-        },{
-            'name': 'Gabi',
-            'support': 'Felix'
-        },{
-            'name': 'Gabi',
-            'support': 'Marco'
-        },{
-            'name': 'Felix',
-            'support': 'Marco'
-        },
-    ]
+    const [manager, setManager] = useState([])
+
+    async function getDiretores(){
+        await http.get('puzzle').then((res) => {
+            setManager(res.data)
+        })
+    }
+
+    useEffect(() => {
+        getDiretores()
+    }, [])
+
     return (
         <section className={styles.container}>
             <h1  className={styles.container__title}>PORTO PUZZLE</h1>

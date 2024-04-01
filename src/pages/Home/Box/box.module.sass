@@ -3,9 +3,11 @@
 .container
   width: calc(100% - 4rem)
   padding: 0 2rem
+  overflow-y: hidden
 
   &__box
     width: 100%
+    height: 100%
     display: flex
     align-items: center
     justify-content: space-around
@@ -13,14 +15,15 @@
     flex-wrap: wrap
 
     &_div
-      width: 20rem
-      height: 20rem
+      min-width: 19%
+      width: 19%
+      height: 12.5rem
       background-color: $darkblue
       background-size: 100%
       display: flex
       justify-content: center
       align-items: center
-      margin-bottom: 2.5rem
+      margin-bottom: 1.5rem
       border-radius: 10px
       position: relative
       z-index: 1
@@ -39,7 +42,7 @@
         &_fixed
           width: 100%
           transform: rotateX(180deg)
-          font-size: 4rem
+          font-size: 3rem
 
         &_number
           font-size: 10rem

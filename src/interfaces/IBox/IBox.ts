@@ -3,6 +3,8 @@ export interface IBox {
 }
 
 interface people {
-    name: string;
-    support: string;
+    _id: string;
+    diretor: string;
+    suporte: string;
+    sorteado: number;
 }
