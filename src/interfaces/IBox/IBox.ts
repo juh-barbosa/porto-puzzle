@@ -1,5 +1,6 @@
 export interface IBox {
-    manager: people[]
+    manager: people[];
+    avaliados: any;
 }
 
 interface people {

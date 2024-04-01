@@ -7,6 +7,7 @@ import {GlobalContext} from "../../store/GlobalState";
 export default function Home(){
     const [manager, setManager] = useState<any>([])
     const { idOpen }: any = useContext(GlobalContext);
+    const [avaliados, setAvaliados] = useState<any>([])
 
     function shuffle(array: any) {
         const shuffledArray = [...array];
@@ -24,6 +25,19 @@ export default function Home(){
         })
     }
 
+    async function encerrarVotacao(){
+        await http.put(`/puzzle/${idOpen}`, {
+            sorteado: 2
+        })
+
+        await http.get(`puzzle/votacao/resultado/${idOpen}`).then((res) => {
+            setAvaliados([...avaliados, {
+                id: idOpen,
+                status: res.data
+            }])
+        })
+    }
+
     useEffect(() => {
         getDiretores()
     }, [])
@@ -31,11 +45,12 @@ export default function Home(){
     return (
         <section className={styles.container}>
             <h1 className={styles.container__title} style={{width: "90%", textAlign: "center"}}>PORTO PUZZLE</h1>
-            <button style={{width: "5%", height: "2rem", marginBottom: "1rem", cursor: "pointer", backgroundColor: "rgba(0,161,252,0.18)", borderStyle: "none", color: "rgba(0,0,0,0.49)"}} onClick={() => {
-
-            }}>ENCERRAR</button>
+            <button style={{width: "5%", height: "2rem", marginBottom: "1rem", cursor: "pointer", backgroundColor: "rgba(0,161,252,0.18)", borderStyle: "none", color: "rgba(0,0,0,0.49)"}} onClick={async () => {
+                await encerrarVotacao()
+            }} >ENCERRAR</button>
             <Box
                 manager={manager}
+                avaliados={avaliados}
             />
         </section>
     )
