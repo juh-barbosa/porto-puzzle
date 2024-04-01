@@ -45,7 +45,7 @@ export default function Home(){
     return (
         <section className={styles.container}>
             <h1 className={styles.container__title} style={{width: "90%", textAlign: "center"}}>PORTO PUZZLE</h1>
-            <button style={{width: "5%", height: "2rem", marginBottom: "1rem", cursor: "pointer", backgroundColor: "rgba(0,161,252,0.18)", borderStyle: "none", color: "rgba(0,0,0,0.49)"}} onClick={async () => {
+            <button style={{width: "15%", height: "2rem", marginBottom: "1rem", cursor: "pointer", backgroundColor: "rgba(0,161,252,0.18)", borderStyle: "none", color: "rgba(0,0,0,0.49)"}} onClick={async () => {
                 await encerrarVotacao()
             }} >ENCERRAR</button>
             <Box
