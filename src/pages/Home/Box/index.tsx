@@ -38,9 +38,9 @@ export default function Box(props: IBox) {
                     >
                         {opens[index] ? (
                             <div className={styles.container__box_div_content}>
-                                <span className={styles.container__box_div_content_fixed} style={{paddingBottom: "8.5rem"}}>{element.diretor}</span>
+                                <span className={styles.container__box_div_content_fixed} style={{paddingBottom: "8rem"}}>{element.diretor}</span>
                                 <span className={styles.container__box_div_content_fixed} style={{fontSize: "3rem"}}>&</span>
-                                <span className={styles.container__box_div_content_fixed} style={{paddingTop: "7.5rem"}}>{element.suporte}</span>
+                                <span className={styles.container__box_div_content_fixed} style={{paddingTop: "7rem"}}>{element.suporte}</span>
                             </div>
                         ) : (
                             <>
