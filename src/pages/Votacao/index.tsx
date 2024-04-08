@@ -70,6 +70,7 @@ export default function Votacao() {
                                 </div>
                             ))
                         }
+                        <span className={styles.container_diretores_developer}>Desenvolvedora - Julia Barbosa de Freitas</span>
                     </div>
             }
         </section>
